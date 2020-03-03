@@ -7,10 +7,9 @@ class BandInput extends Component {
   }
 
   handleOnChange = e => {
-    let name = e.target.name
     let value = e.target.value
     this.setState({
-      [name]: value
+      name: value
     })
   }
 
@@ -25,9 +24,9 @@ class BandInput extends Component {
   render() {
     return(
       <div>
-        <form onSubmit={this.handleOnSubmit} >
+        <form onSubmit={event => this.handleOnSubmit(event)} >
           <label>Band Name: </label>
-          <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
+          <input type="text" name="name" value={this.state.name} onChange={event => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
       </div>

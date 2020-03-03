@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import BandInput from '../components/BandInput'
+import Bands from  '../components/Bands'
 import { addBand } from '../actions/bands'
 
 class BandsContainer extends Component {
@@ -12,7 +13,7 @@ class BandsContainer extends Component {
         <hr/>
         <h2>Bands:</h2>
         <ul>
-          {this.props.bands.map((band, idx) => <li key={idx}>{band.name}</li>)}
+          <Bands bands={this.props.bands} />
         </ul>
       </div>
     )

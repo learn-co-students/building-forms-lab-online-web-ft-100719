@@ -3,6 +3,7 @@ export default function manageBand(state = {
 }, action) {
   switch ( action.type ) {
     case "ADD_BAND": 
+    debugger
       return Object.assign({}, {
         bands: state.bands.concat(action.name)
       })
